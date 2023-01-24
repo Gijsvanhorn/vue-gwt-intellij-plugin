@@ -4,24 +4,24 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
         maven {
-            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+            url 'https://jetbrains.team/p/intellij-plugin-verifier/packages/maven/intellij-plugin-structure'
         }
         mavenCentral()
     }
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.4.10"
+    id("org.jetbrains.intellij") version "1.12.0"
 }
 
 apply plugin: 'org.jetbrains.intellij'
 
 intellij {
-    version 'IU-LATEST-EAP-SNAPSHOT'
-    pluginName 'vue-gwt-plugin'
-    downloadSources true
-    updateSinceUntilBuild false
-    plugins = ['java']
+    version.set('IU-LATEST-EAP-SNAPSHOT')
+    pluginName.set('vue-gwt-plugin')
+    downloadSources.set(true)
+    updateSinceUntilBuild.set(false)
+    plugins.set(['java'])
 }
 
 group 'com.axellience'
